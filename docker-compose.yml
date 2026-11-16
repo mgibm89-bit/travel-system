@@ -1,0 +1,52 @@
+# Travel AI: 3 service (өгөгдлийн сан + backend + frontend)
+# Утгууд (EC2_IP, POSTGRES_PASSWORD, SECRET_KEY) нь энэ хавтасны .env файлаас автоматаар уншигдана.
+
+services:
+  # 1) Өгөгдлийн сан
+  db:
+    image: postgres:16
+    environment:
+      POSTGRES_USER: student
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
+      POSTGRES_DB: travel
+    volumes:
+      # Анх удаа асахад энэ SQL файл автоматаар ачаалагдана
+      - ./synthetic_data.sql:/docker-entrypoint-initdb.d/01_data.sql:ro
+      # Өгөгдлийг контейнер устсан ч хадгална
+      - pgdata:/var/lib/postgresql/data
+    # ports байхгүй: гаднаас хандах боломжгүй, зөвхөн backend холбогдоно
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U student -d travel"]
+      interval: 5s
+      timeout: 3s
+      retries: 10
+    restart: unless-stopped
+
+  # 2) Backend (FastAPI)
+  backend:
+    build: ./travel-backend
+    environment:
+      # "db" нь дээрх service-ийн нэр: Docker өөрөө хаяг руу хөрвүүлнэ
+      DATABASE_URL: postgresql://student:${POSTGRES_PASSWORD}@db:5432/travel
+      ALLOWED_ORIGINS: http://${EC2_IP}
+      SECRET_KEY: ${SECRET_KEY}
+    ports:
+      - "8000:8000"
+    depends_on:
+      db:
+        condition: service_healthy   # db бэлэн болсны дараа асна
+    restart: unless-stopped
+
+  # 3) Frontend (nginx статик файлуудыг үзүүлнэ)
+  frontend:
+    image: nginx:alpine
+    volumes:
+      - ./travel-frontend:/usr/share/nginx/html:ro
+    ports:
+      - "80:80"
+    depends_on:
+      - backend
+    restart: unless-stopped
+
+volumes:
+  pgdata:

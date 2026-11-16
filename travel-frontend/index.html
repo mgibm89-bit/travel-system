@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="mn">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Travel Admin</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- ===== Нэвтрэх хуудас ===== -->
+  <section id="login-view" class="login-view hidden">
+    <form id="login-form" class="login-card" autocomplete="on">
+      <div class="logo">TA</div>
+      <h1>Travel Admin</h1>
+      <p class="muted">Аяллын компанийн удирдлагын самбар</p>
+
+      <label for="email">И-мэйл</label>
+      <input id="email" type="email" placeholder="admin@travel.mn" required>
+
+      <label for="password">Нууц үг</label>
+      <input id="password" type="password" placeholder="••••••••" required>
+
+      <p id="login-error" class="error hidden"></p>
+      <button type="submit" id="login-btn">Нэвтрэх</button>
+    </form>
+  </section>
+
+  <!-- ===== Самбар (нэвтэрсний дараа) ===== -->
+  <section id="app-view" class="app hidden">
+    <aside class="sidebar">
+      <div class="brand"><div class="logo sm">TA</div><span>Travel Admin</span></div>
+
+      <nav id="menu">
+        <p class="group">Удирдлага</p>
+        <a data-page="dashboard" class="active">Хяналт</a>
+        <a data-page="tours">Аялал <span class="badge" id="badge-tours">–</span></a>
+        <a data-page="bookings">Захиалга <span class="badge warn" id="badge-pending">–</span></a>
+        <a data-page="customers">Үйлчлүүлэгч</a>
+        <a data-page="guides">Хөтөч</a>
+
+        <p class="group">AI</p>
+        <a data-page="predict">Эрэлт таамаглах <span class="badge">ML</span></a>
+
+        <p class="group">Удахгүй</p>
+        <a data-page="facebook">Facebook <span class="badge">Тун удахгүй</span></a>
+      </nav>
+
+      <div class="user">
+        <div id="user-email" class="muted-light"></div>
+        <a id="logout">Гарах</a>
+      </div>
+    </aside>
+
+    <main id="content"></main>
+  </section>
+
+  <script src="config.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>

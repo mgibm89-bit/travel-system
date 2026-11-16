@@ -1,0 +1,254 @@
+/* =====================================================================
+   TRAVEL AI · BRAND CSS  v1.0
+   Шинэ вэб бүрт:  <link rel="stylesheet" href="brand.css">
+   Дүрмүүдийг README.md-ээс уншина уу.
+   ===================================================================== */
+
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap");
+
+/* ---------------------------------------------------------------------
+   1. TOKENS — бүх өнгө, хэмжээг ЗӨВХӨН эндээс авна. Кодонд #hex бичихгүй.
+   --------------------------------------------------------------------- */
+:root {
+  /* Брэнд ногоон: итгэл, байгаль, тогтвортой байдал */
+  --green-900: #0e3b24;   /* sidebar, гарчиг, нэвтрэх дэвсгэр */
+  --green-700: #1f7a4a;   /* хадгалах товч, амжилтын текст */
+  --green-500: #5cbf85;   /* идэвхтэй цэс, focus хүрээ */
+  --green-50:  #eaf6ef;   /* KPI карт, хүснэгтийн толгой, амжилтын дэвсгэр */
+
+  /* Брэнд улбар шар: үйлдэл, AI, анхаарал */
+  --orange-500: #e8743b;  /* лого, том тоо (24px+), чимэглэл. Жижиг текстэд БИШ */
+  --orange-700: #b5501c;  /* үндсэн товч (цагаан текст), улбар шар текст */
+  --orange-800: #a94a19;  /* orange-50 дэвсгэр дээрх текст (pill) */
+  --orange-50:  #fdeee6;  /* хүлээгдэж буй төлөвийн дэвсгэр */
+
+  /* Саармаг */
+  --text:   #1b2a22;      /* үндсэн текст */
+  --muted:  #5f6d66;      /* тайлбар, label, хоёрдогч текст */
+  --line:   #e6ebe8;      /* хүрээ, хүснэгтийн зураас */
+  --bg:     #f6f8f7;      /* хуудасны дэвсгэр */
+  --surface:#ffffff;      /* панел, форм, хүснэгт */
+  --neutral:#eef0ef;      /* ghost товч, цуцлагдсан төлөв */
+
+  /* Төлөв */
+  --danger:    #c0392b;
+  --danger-50: #fdecea;
+
+  /* Sidebar доторх текст */
+  --on-dark:       #ffffff;
+  --on-dark-soft:  #e3efe8;
+  --on-dark-muted: #8fb3a0;
+
+  /* Үсэг */
+  --font: "Inter", "Segoe UI", system-ui, -apple-system, sans-serif;
+  --fs-xs: 11px;   /* label, badge, pill */
+  --fs-sm: 12px;   /* тайлбар, хүснэгтийн толгой */
+  --fs-md: 13px;   /* хүснэгт, товч, цэс */
+  --fs-base: 14px; /* үндсэн текст */
+  --fs-lg: 16px;   /* онцлох үр дүн */
+  --fs-xl: 20px;   /* хуудасны гарчиг */
+  --fs-2xl: 22px;  /* KPI тоо */
+  --fs-3xl: 40px;  /* AI таамаглал гэх мэт гол тоо */
+
+  /* Зай: 4-ийн алхам */
+  --s-1: 4px;  --s-2: 8px;  --s-3: 12px; --s-4: 16px;
+  --s-5: 20px; --s-6: 24px; --s-7: 28px; --s-8: 32px;
+
+  /* Булан */
+  --r-sm: 6px;     /* товч, input */
+  --r-md: 10px;    /* карт, панел */
+  --r-lg: 12px;    /* modal, нэвтрэх карт */
+  --r-full: 999px; /* pill, badge, лого */
+
+  /* Сүүдэр: зөвхөн хөвөгч зүйлд */
+  --shadow-float: 0 8px 24px rgba(0, 0, 0, .18);   /* toast */
+  --shadow-modal: 0 12px 40px rgba(0, 0, 0, .25);  /* нэвтрэх карт */
+
+  --sidebar-w: 220px;
+}
+
+/* ---------------------------------------------------------------------
+   2. СУУРЬ
+   --------------------------------------------------------------------- */
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  font-family: var(--font);
+  font-size: var(--fs-base);
+  line-height: 1.5;
+  color: var(--text);
+  background: var(--bg);
+}
+h1, h2, h3 { color: var(--green-900); margin: 0; line-height: 1.25; }
+h1 { font-size: var(--fs-xl); font-weight: 700; }
+h2 { font-size: var(--fs-xl); font-weight: 700; }
+h3 { font-size: var(--fs-base); font-weight: 600; }
+.sub   { color: var(--muted); font-size: var(--fs-sm); margin: var(--s-1) 0 var(--s-5); }
+.muted { color: var(--muted); }
+:focus-visible { outline: 2px solid var(--green-500); outline-offset: 2px; }
+
+/* ---------------------------------------------------------------------
+   3. ЛОГО
+   --------------------------------------------------------------------- */
+.logo {
+  width: 36px; height: 36px; border-radius: var(--r-full);
+  background: var(--orange-500); color: #fff;
+  display: inline-grid; place-items: center;
+  font-weight: 700; font-size: 13px; letter-spacing: .02em;
+  flex-shrink: 0;
+}
+.logo--sm { width: 28px; height: 28px; font-size: 11px; }
+.logo--lg { width: 56px; height: 56px; font-size: 20px; }
+.brand { display: flex; align-items: center; gap: 10px; font-weight: 600; }
+
+/* ---------------------------------------------------------------------
+   4. ТОВЧ
+   --------------------------------------------------------------------- */
+.btn {
+  font: inherit; font-size: var(--fs-md); font-weight: 500;
+  border: 0; border-radius: var(--r-sm);
+  padding: var(--s-2) 14px; cursor: pointer;
+  display: inline-flex; align-items: center; gap: 6px;
+}
+.btn:disabled { opacity: .6; cursor: wait; }
+.btn--primary { background: var(--orange-700); color: #fff; }   /* + Нэмэх, Таамаглах */
+.btn--success { background: var(--green-700);  color: #fff; }   /* Хадгалах, Нэвтрэх */
+.btn--ghost   { background: var(--neutral);    color: var(--text); } /* Болих */
+.btn--danger  { background: var(--danger);     color: #fff; }
+.btn--block   { width: 100%; justify-content: center; }
+
+/* Хүснэгтийн мөр доторх жижиг товч */
+.btn-sm {
+  font: inherit; font-size: var(--fs-xs); border: 0; border-radius: 5px;
+  padding: 3px var(--s-2); cursor: pointer;
+}
+.btn-sm--edit    { background: var(--green-50);   color: var(--green-700); }
+.btn-sm--delete  { background: var(--danger-50);  color: var(--danger); }
+.btn-sm--confirm { background: var(--orange-700); color: #fff; }
+.btn-sm--cancel  { background: var(--neutral);    color: var(--text); }
+
+/* ---------------------------------------------------------------------
+   5. ТЭМДЭГ: badge (цэс), pill (төлөв), tag (AI)
+   --------------------------------------------------------------------- */
+.badge {
+  font-size: 10px; padding: 2px 7px; border-radius: var(--r-full);
+  background: rgba(255, 255, 255, .15); color: var(--on-dark-soft);
+}
+.badge--alert { background: var(--orange-700); color: #fff; }
+
+.pill {
+  font-size: var(--fs-xs); padding: 2px var(--s-2); border-radius: var(--r-full);
+  white-space: nowrap; display: inline-block;
+}
+.pill--pending   { background: var(--orange-50); color: var(--orange-800); }
+.pill--confirmed { background: var(--green-50);  color: var(--green-700); }
+.pill--cancelled { background: var(--neutral);   color: var(--muted); }
+
+.tag {
+  font-size: 10px; font-weight: 600; padding: 2px 7px; border-radius: var(--r-full);
+  background: var(--orange-700); color: #fff; vertical-align: middle;
+}
+
+/* ---------------------------------------------------------------------
+   6. КАРТ, ПАНЕЛ
+   --------------------------------------------------------------------- */
+.kpi-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; }
+.kpi { background: var(--green-50); border-radius: var(--r-md); padding: 14px var(--s-4); }
+.kpi__label { font-size: var(--fs-xs); color: var(--muted); }
+.kpi__value { font-size: var(--fs-2xl); font-weight: 700; color: var(--green-900); margin-top: var(--s-1); }
+
+.panel {
+  background: var(--surface); border: 1px solid var(--line);
+  border-radius: var(--r-md); padding: var(--s-4);
+}
+.panel > h3 { margin-bottom: var(--s-3); display: flex; align-items: center; gap: 6px; }
+
+.ai-number { font-size: var(--fs-3xl); font-weight: 700; color: var(--orange-500); line-height: 1.1; }
+.ai-text   { font-size: var(--fs-lg); font-weight: 700; color: var(--orange-700); }
+
+.empty {
+  background: var(--surface); border: 1px dashed var(--line); border-radius: var(--r-md);
+  padding: 48px var(--s-5); text-align: center; color: var(--muted);
+}
+
+/* ---------------------------------------------------------------------
+   7. ХҮСНЭГТ
+   --------------------------------------------------------------------- */
+.table-wrap { overflow-x: auto; }
+.table { width: 100%; border-collapse: collapse; font-size: var(--fs-md); }
+.table th {
+  text-align: left; background: var(--green-50);
+  padding: var(--s-2); font-size: var(--fs-sm); font-weight: 600;
+}
+.table td { padding: var(--s-2); border-bottom: 1px solid var(--line); }
+.table td.num { text-align: right; font-variant-numeric: tabular-nums; }
+.table td.ai  { color: var(--orange-700); font-weight: 600; }
+.table td.actions { white-space: nowrap; text-align: right; }
+.table td.actions > * + * { margin-left: var(--s-1); }
+
+/* ---------------------------------------------------------------------
+   8. ФОРМ
+   --------------------------------------------------------------------- */
+.field { display: flex; flex-direction: column; gap: var(--s-1); font-size: var(--fs-xs); color: var(--muted); }
+.input, .select {
+  font: inherit; font-size: var(--fs-md); color: var(--text);
+  padding: 7px 9px; background: var(--surface);
+  border: 1px solid var(--line); border-radius: var(--r-sm);
+}
+.input:focus, .select:focus { outline: 2px solid var(--green-500); border-color: transparent; }
+.form-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(160px, 1fr)); gap: 10px; }
+.form-actions { display: flex; gap: var(--s-2); align-items: center; margin-top: var(--s-3); }
+.error-text { color: var(--danger); font-size: var(--fs-sm); }
+
+/* ---------------------------------------------------------------------
+   9. LAYOUT: sidebar + агуулга
+   --------------------------------------------------------------------- */
+.app { display: flex; min-height: 100vh; }
+.sidebar {
+  width: var(--sidebar-w); flex-shrink: 0;
+  background: var(--green-900); color: var(--on-dark);
+  display: flex; flex-direction: column; padding: 18px var(--s-3);
+}
+.nav__group {
+  font-size: 10px; letter-spacing: .08em; text-transform: uppercase;
+  color: var(--on-dark-muted); margin: var(--s-4) var(--s-2) 6px;
+}
+.nav__item {
+  display: flex; justify-content: space-between; align-items: center;
+  padding: var(--s-2) 10px; border-radius: var(--r-sm); margin-bottom: 2px;
+  color: var(--on-dark-soft); font-size: var(--fs-md); cursor: pointer; text-decoration: none;
+}
+.nav__item:hover { background: rgba(255, 255, 255, .07); }
+.nav__item.is-active { background: var(--green-500); color: var(--green-900); font-weight: 600; }
+.main { flex: 1; min-width: 0; padding: var(--s-6) var(--s-7); }
+.page-head { display: flex; justify-content: space-between; align-items: flex-start; gap: var(--s-3); flex-wrap: wrap; }
+
+/* Нэвтрэх хуудас */
+.auth { min-height: 100vh; background: var(--green-900); display: grid; place-items: center; padding: var(--s-4); }
+.auth__card {
+  width: 100%; max-width: 320px; background: var(--surface);
+  border-radius: var(--r-lg); padding: var(--s-7) var(--s-6); box-shadow: var(--shadow-modal);
+}
+
+/* ---------------------------------------------------------------------
+   10. МЭДЭГДЭЛ (toast)
+   --------------------------------------------------------------------- */
+.toast {
+  position: fixed; right: var(--s-5); bottom: var(--s-5); z-index: 50;
+  max-width: 380px; padding: var(--s-3) var(--s-4); border-radius: 8px;
+  color: #fff; font-size: var(--fs-md); box-shadow: var(--shadow-float);
+}
+.toast--ok  { background: var(--green-700); }
+.toast--err { background: var(--danger); }
+
+/* ---------------------------------------------------------------------
+   11. ДЭЛГЭЦИЙН ХЭМЖЭЭ
+   --------------------------------------------------------------------- */
+@media (max-width: 900px) {
+  .kpi-grid { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 640px) {
+  .app { flex-direction: column; }
+  .sidebar { width: 100%; }
+  .main { padding: var(--s-4); }
+}

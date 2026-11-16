@@ -1,0 +1,15 @@
+# Нууц тохиргоо (нууц үг, SECRET_KEY): GitHub-д ХЭЗЭЭ Ч оруулахгүй
+.env
+*.env
+!.env.example
+
+# Python-ы түр файлууд ба виртуал орчин
+.venv/
+venv/
+__pycache__/
+*.pyc
+
+# Систем/редакторын файлууд
+.DS_Store
+Thumbs.db
+.vscode/

@@ -1,0 +1,247 @@
+<!doctype html>
+<html lang="mn">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Travel AI Brand Book</title>
+  <link rel="stylesheet" href="brand.css">
+  <style>
+    /* Зөвхөн энэ танилцуулга хуудасны зохион байгуулалт */
+    .bb { max-width: 1040px; margin: 0 auto; padding: 40px 24px 80px; }
+    .bb-hero { background: var(--green-900); color: var(--on-dark); border-radius: var(--r-lg); padding: 40px 32px; display: flex; gap: 20px; align-items: center; }
+    .bb-hero h1 { color: #fff; font-size: 28px; }
+    .bb-hero p { color: var(--on-dark-soft); margin: 6px 0 0; }
+    section { margin-top: 48px; }
+    section > h2 { font-size: 22px; margin-bottom: 4px; }
+    .eyebrow { font-size: var(--fs-xs); letter-spacing: .1em; text-transform: uppercase; color: var(--orange-700); font-weight: 600; }
+    .grid { display: grid; gap: 14px; }
+    .g4 { grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); }
+    .g2 { grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); }
+    .swatch { border: 1px solid var(--line); border-radius: var(--r-md); overflow: hidden; background: var(--surface); }
+    .swatch .chip { height: 72px; display: flex; align-items: flex-end; padding: 8px 10px; font-size: var(--fs-xs); font-weight: 600; }
+    .swatch .meta { padding: 10px; font-size: var(--fs-sm); }
+    .swatch code { font-size: var(--fs-xs); color: var(--muted); }
+    .row { display: flex; gap: 10px; flex-wrap: wrap; align-items: center; }
+    .type-row { display: flex; align-items: baseline; gap: 16px; padding: 10px 0; border-bottom: 1px solid var(--line); }
+    .type-row code { width: 150px; flex-shrink: 0; font-size: var(--fs-xs); color: var(--muted); }
+    .do, .dont { border-radius: var(--r-md); padding: 14px 16px; font-size: var(--fs-md); }
+    .do { background: var(--green-50); } .dont { background: var(--danger-50); }
+    .do b { color: var(--green-700); } .dont b { color: var(--danger); }
+    .mini-app { border: 1px solid var(--line); border-radius: var(--r-md); overflow: hidden; min-height: 0; }
+    .mini-app .sidebar { padding: 14px 10px; }
+    .mini-app .main { padding: 20px; }
+    .toast-demo { position: static; display: inline-block; }
+    .ratio { font-size: var(--fs-xs); color: var(--muted); }
+    .warn { color: var(--orange-800); font-weight: 600; }
+  </style>
+</head>
+<body>
+<div class="bb">
+
+  <header class="bb-hero">
+    <div class="logo logo--lg">TA</div>
+    <div>
+      <h1>Travel AI · Brand Book</h1>
+      <p>Аяллын бизнесийн тооцоог тайван, ойлгомжтой харуулж, AI-ийн зөвлөгөөг тод онцолдог.</p>
+    </div>
+  </header>
+
+  <!-- ============ ЛОГО ============ -->
+  <section>
+    <div class="eyebrow">01</div>
+    <h2>Лого</h2>
+    <p class="sub">Улбар шар дугуй, дотор нь цагаан «TA». Сунгах, эргүүлэх, өнгө солихгүй.</p>
+    <div class="grid g4">
+      <div class="panel row"><span class="logo logo--sm">TA</span><span class="ratio">28px · sidebar</span></div>
+      <div class="panel row"><span class="logo">TA</span><span class="ratio">36px · нэвтрэх</span></div>
+      <div class="panel row"><span class="logo logo--lg">TA</span><span class="ratio">56px · танилцуулга</span></div>
+      <div class="panel row" style="background:var(--green-900);border-color:var(--green-900)">
+        <span class="brand" style="color:#fff"><span class="logo logo--sm">TA</span>Travel Admin</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ ӨНГӨ ============ -->
+  <section>
+    <div class="eyebrow">02</div>
+    <h2>Өнгө</h2>
+    <p class="sub">Ногоон 80% (систем, итгэл) · Улбар шар ≤10% (үйлдэл, AI) · Улаан зөвхөн устгах/алдаа.</p>
+    <div class="grid g4" id="swatches"></div>
+  </section>
+
+  <!-- ============ ҮСЭГ ============ -->
+  <section>
+    <div class="eyebrow">03</div>
+    <h2>Үсэг</h2>
+    <p class="sub">Inter. Монгол кирилл Ө, Ү бүрэн дэмжинэ.</p>
+    <div class="panel">
+      <div class="type-row"><code>--fs-3xl · 40 · 700</code><span class="ai-number">≈ 12.5</span></div>
+      <div class="type-row"><code>--fs-2xl · 22 · 700</code><span class="kpi__value" style="margin:0">4,622,330,000 ₮</span></div>
+      <div class="type-row"><code>--fs-xl · 20 · 700</code><h2>Хяналтын самбар</h2></div>
+      <div class="type-row"><code>--fs-lg · 16 · 700</code><span class="ai-text">Таамаглал: 12.5 захиалга</span></div>
+      <div class="type-row"><code>--fs-base · 14 · 400</code><span>Хөвсгөлийн аялал 5 хоног үргэлжилнэ.</span></div>
+      <div class="type-row"><code>--fs-md · 13 · 400</code><span style="font-size:var(--fs-md)">Хүснэгт, товч, цэсний текст</span></div>
+      <div class="type-row"><code>--fs-sm · 12 · 400</code><span class="muted" style="font-size:var(--fs-sm)">Нэмэх, засах, устгах, хайх</span></div>
+      <div class="type-row" style="border:0"><code>--fs-xs · 11 · 400</code><span class="muted" style="font-size:var(--fs-xs)">И-мэйл</span></div>
+    </div>
+  </section>
+
+  <!-- ============ БҮРЭЛДЭХҮҮН ============ -->
+  <section>
+    <div class="eyebrow">04</div>
+    <h2>Товч ба тэмдэг</h2>
+    <p class="sub">Хуудсанд нэг л үндсэн (улбар шар) товч.</p>
+    <div class="grid g2">
+      <div class="panel">
+        <h3>Товч</h3>
+        <div class="row">
+          <button class="btn btn--primary">+ Нэмэх</button>
+          <button class="btn btn--success">Хадгалах</button>
+          <button class="btn btn--ghost">Болих</button>
+          <button class="btn btn--danger">Устгах</button>
+        </div>
+        <div class="row" style="margin-top:14px">
+          <button class="btn-sm btn-sm--confirm">Батлах</button>
+          <button class="btn-sm btn-sm--cancel">Цуцлах</button>
+          <button class="btn-sm btn-sm--edit">Засах</button>
+          <button class="btn-sm btn-sm--delete">Устгах</button>
+        </div>
+      </div>
+      <div class="panel">
+        <h3>Төлөв ба AI <span class="tag">ML</span></h3>
+        <div class="row">
+          <span class="pill pill--pending">Хүлээгдэж буй</span>
+          <span class="pill pill--confirmed">Батлагдсан</span>
+          <span class="pill pill--cancelled">Цуцлагдсан</span>
+        </div>
+        <div class="row" style="margin-top:14px">
+          <span class="toast toast--ok toast-demo">Амжилттай хадгаллаа</span>
+          <span class="toast toast--err toast-demo">Устгах боломжгүй</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="eyebrow">05</div>
+    <h2>Карт, хүснэгт, форм</h2>
+    <p class="sub">Карт, панелд сүүдэр биш 1px хүрээ.</p>
+    <div class="kpi-grid">
+      <div class="kpi"><div class="kpi__label">Нийт аялал</div><div class="kpi__value">150</div></div>
+      <div class="kpi"><div class="kpi__label">Нийт захиалга</div><div class="kpi__value">1227</div></div>
+      <div class="kpi"><div class="kpi__label">Хүлээгдэж буй</div><div class="kpi__value">10</div></div>
+      <div class="kpi"><div class="kpi__label">Нийт орлого</div><div class="kpi__value">4,622,330,000 ₮</div></div>
+    </div>
+    <div class="grid g2" style="margin-top:14px">
+      <div class="panel">
+        <h3>Хамгийн эрэлттэй аялал <span class="tag">ML</span></h3>
+        <div class="table-wrap">
+          <table class="table">
+            <thead><tr><th>Аялал</th><th>Бодит</th><th>Таамаглал</th><th></th></tr></thead>
+            <tbody>
+              <tr><td>Төв: дугуйн аялал</td><td class="num">19</td><td class="num ai">16.2</td>
+                  <td class="actions"><button class="btn-sm btn-sm--edit">Засах</button><button class="btn-sm btn-sm--delete">Устгах</button></td></tr>
+              <tr><td>Төв: соёлын аялал</td><td class="num">19</td><td class="num ai">16.7</td>
+                  <td class="actions"><button class="btn-sm btn-sm--edit">Засах</button><button class="btn-sm btn-sm--delete">Устгах</button></td></tr>
+              <tr><td>Төв: загасчлал</td><td class="num">17</td><td class="num ai">14.6</td>
+                  <td class="actions"><button class="btn-sm btn-sm--edit">Засах</button><button class="btn-sm btn-sm--delete">Устгах</button></td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+      <form class="panel" onsubmit="return false">
+        <h3>Форм</h3>
+        <div class="form-grid">
+          <label class="field">Нэр *<input class="input" value="Тэрхийн цагаан нуур"></label>
+          <label class="field">Чиглэл *<input class="input" value="Архангай"></label>
+          <label class="field">Хоног *<input class="input" type="number" value="4"></label>
+          <label class="field">Хөтөч<select class="select"><option>Ганбат</option></select></label>
+        </div>
+        <div class="form-actions">
+          <button class="btn btn--success">Хадгалах</button>
+          <button class="btn btn--ghost" type="button">Болих</button>
+        </div>
+      </form>
+    </div>
+  </section>
+
+  <!-- ============ LAYOUT ============ -->
+  <section>
+    <div class="eyebrow">06</div>
+    <h2>Layout</h2>
+    <p class="sub">Зүүн талд 220px ногоон sidebar, баруун талд агуулга.</p>
+    <div class="app mini-app">
+      <aside class="sidebar">
+        <div class="brand"><span class="logo logo--sm">TA</span>Travel Admin</div>
+        <div class="nav__group">Удирдлага</div>
+        <a class="nav__item is-active">Хяналт</a>
+        <a class="nav__item">Аялал <span class="badge">150</span></a>
+        <a class="nav__item">Захиалга <span class="badge badge--alert">10</span></a>
+        <div class="nav__group">AI</div>
+        <a class="nav__item">Эрэлт таамаглах <span class="badge">ML</span></a>
+        <div class="nav__group">Удахгүй</div>
+        <a class="nav__item">Facebook <span class="badge">Тун удахгүй</span></a>
+      </aside>
+      <main class="main">
+        <div class="page-head">
+          <div><h2>Аялал</h2><p class="sub">Нэмэх, засах, устгах, хайх</p></div>
+          <button class="btn btn--primary">+ Нэмэх</button>
+        </div>
+        <div class="empty">Мэдээлэл алга.</div>
+      </main>
+    </div>
+  </section>
+
+  <!-- ============ ЗӨВ / БУРУУ ============ -->
+  <section>
+    <div class="eyebrow">07</div>
+    <h2>Бичвэр: зөв ба буруу</h2>
+    <p class="sub">Монгол хэлээр, энгийн, юу хийхийг нь хэл.</p>
+    <div class="grid g2">
+      <div class="do"><b>✅ Зөв</b><br>Төлбөр төлөгдсөн захиалгыг устгах боломжгүй. «Цуцлах» товчийг ашиглана уу.</div>
+      <div class="dont"><b>❌ Буруу</b><br>Error 409: Conflict</div>
+      <div class="do"><b>✅ Зөв</b><br>1,250,000 ₮ · 2026-11-13 · «Хөвсгөлийн аялал» аяллыг устгах уу?</div>
+      <div class="dont"><b>❌ Буруу</b><br>₮1.25M · 11/13/26 · Delete хийх үү?</div>
+    </div>
+  </section>
+
+</div>
+
+<script>
+  // Өнгөний дээжийг brand.css-ийн token-оос шууд уншиж, ялгаралтайгаар харуулна
+  const COLORS = [
+    ["--green-900", "Брэнд гол · sidebar, гарчиг", "#fff"],
+    ["--green-700", "Хадгалах, амжилт", "#fff"],
+    ["--green-500", "Идэвхтэй цэс, focus", "--green-900"],
+    ["--green-50",  "KPI карт, хүснэгтийн толгой", "--text"],
+    ["--orange-500","Брэнд онцлох · лого, том тоо", "#fff"],
+    ["--orange-700","Үндсэн товч, AI текст", "#fff"],
+    ["--orange-800","Pill-ийн текст", "#fff"],
+    ["--orange-50", "Хүлээгдэж буй дэвсгэр", "--orange-800"],
+    ["--text",      "Үндсэн текст", "#fff"],
+    ["--muted",     "Тайлбар, label", "#fff"],
+    ["--line",      "Хүрээ, зураас", "--text"],
+    ["--bg",        "Хуудасны дэвсгэр", "--text"],
+    ["--neutral",   "Ghost товч, цуцлагдсан", "--text"],
+    ["--danger",    "Устгах, алдаа", "#fff"],
+  ];
+  const css = getComputedStyle(document.documentElement);
+  const val = (v) => v.startsWith("--") ? css.getPropertyValue(v).trim() : v;
+  function lum(hex) {
+    const c = hex.replace("#", "").match(/../g).map((x) => parseInt(x, 16) / 255)
+      .map((x) => x <= 0.03928 ? x / 12.92 : ((x + 0.055) / 1.055) ** 2.4);
+    return 0.2126 * c[0] + 0.7152 * c[1] + 0.0722 * c[2];
+  }
+  const ratio = (a, b) => { const [x, y] = [lum(a), lum(b)].sort((p, q) => q - p); return (x + 0.05) / (y + 0.05); };
+
+  document.getElementById("swatches").innerHTML = COLORS.map(([token, role, fg]) => {
+    const bg = val(token), f = val(fg), r = ratio(bg, f);
+    const note = r >= 4.5 ? "✅ жижиг текст" : r >= 3 ? `<span class="warn">⚠️ зөвхөн том текст</span>` : "— текстгүй";
+    return `<div class="swatch">
+      <div class="chip" style="background:${bg};color:${f}">Аа ${r.toFixed(2)}</div>
+      <div class="meta"><b>${role}</b><br><code>${token} · ${bg}</code><br><span class="ratio">${note}</span></div>
+    </div>`;
+  }).join("");
+</script>
+</body>
+</html>
