@@ -27,7 +27,8 @@ services:
     build: ./travel-backend
     environment:
       # "db" нь дээрх service-ийн нэр: Docker өөрөө хаяг руу хөрвүүлнэ
-      DATABASE_URL: postgresql://student:${POSTGRES_PASSWORD}@db:5432/travel
+      # Нууц үгэнд "@" байвал URL эвдэрдэг тул кодлогдсон хувилбарыг (%40) ашиглана
+      DATABASE_URL: postgresql://student:${POSTGRES_PASSWORD_URL}@db:5432/travel
       ALLOWED_ORIGINS: http://${EC2_IP}
       SECRET_KEY: ${SECRET_KEY}
     ports:

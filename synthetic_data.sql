@@ -270,7 +270,7 @@ ALTER TABLE ONLY public.tours ALTER COLUMN tour_id SET DEFAULT nextval('public.t
 --
 
 COPY public.admins (admin_id, email, password_hash) FROM stdin;
-1	admin@travel.mn	$2b$12$RZ1NNULBkQ4NTw7gRTuc5eckC6grf0rggorV/in/282jN73EaR7g.
+1	admin@travel.mn	$2b$12$/Q.qVT/hMxHkKTiQ2/tHn.ymnKe.XGsjnutE0w/kUVDvVWqto///y
 \.
 
 
